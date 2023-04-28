@@ -2,3 +2,21 @@
     padding: 0;
     margin: 0;
 }
+
+button{
+    background-color: aqua;
+}
+
+div p{
+    font-size: 12px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.maindiv p {
+    background-color: aquamarine;
+    color: green;
+}
+
+.maindiv a {
+    text-decoration: none;
+}
