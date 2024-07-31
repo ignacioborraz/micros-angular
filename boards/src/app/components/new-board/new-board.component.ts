@@ -21,6 +21,7 @@ export class NewboardComponent {
       (response) => {
         alert(response.message);
         this.board = { name: '', description: '' };
+        this.service.setReload();
       },
       (error) => alert(error.error.message)
     );

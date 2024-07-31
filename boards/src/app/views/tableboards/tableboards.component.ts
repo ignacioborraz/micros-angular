@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, effect } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BoardsService } from '../../services/boards.service';
@@ -12,26 +12,16 @@ import { BoardComponent } from '../../components/board/board.component';
   imports: [CommonModule, RouterModule, NewboardComponent, BoardComponent],
   templateUrl: './tableboards.component.html',
 })
-export class TableboardsComponent implements OnInit {
+export class TableboardsComponent {
   boards: Array<Board> = [];
-
-  constructor(private route: ActivatedRoute, private service: BoardsService) {}
-
-  ngOnInit(): void {
-    this.service.readAll().subscribe(
-      (response) => (this.boards = response.response),
-      (error) => alert(error.error.message)
-    );
+  reaload = this.service.getReload();
+  constructor(private route: ActivatedRoute, private service: BoardsService) {
+    effect(() => {
+      this.reaload();
+      this.service.readAll().subscribe(
+        (response) => (this.boards = response.response),
+        (error) => alert(error.error.message)
+      );
+    });
   }
 }
-
-/*   ngOnInit(): void {
-    this.route.queryParamMap.subscribe((queries) => {
-      this.onsale = queries.get('onsale') === 'true' ? true : false;
-      this.price = queries.get('price') || 'asc';
-    });
-    console.log('ONSALE: ' + this.onsale);
-    console.log('PRICE: ' + this.price);
-    this.filteredProducts = this.service.readAll(this.onsale, this.price, '');
-    console.log(this.filteredProducts);
-  } */

@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  token = localStorage.getItem('token') || null;
+  isOnline = localStorage.getItem('token') ? true : false;
   signout = (): void => {
     localStorage.removeItem('token');
     location.replace('/');

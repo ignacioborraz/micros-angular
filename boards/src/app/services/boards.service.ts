@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Board } from '../interfaces/board';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -27,5 +27,15 @@ export class BoardsService {
       token,
     });
     return this.http.get<any>(`${this.apiUrl}/boards`, { headers });
+  }
+
+  private reload = signal(true);
+
+  getReload() {
+    return this.reload;
+  }
+
+  setReload() {
+    this.reload.update((val) => !val);
   }
 }
