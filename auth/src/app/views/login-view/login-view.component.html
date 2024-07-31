@@ -1,0 +1,13 @@
+<section class="absolute top-0 left-0 w-full min-h-screen pt-[60px] flex flex-col items-center justify-center">
+  <form class="w-[400px] flex flex-col items-center p-[20px]">
+    <input [(ngModel)]="user.email" class="w-full text-center p-[10px] text-[16px] my-[10px] rounded border-2 border-purple-300"
+      type="email" name="email" id="email" placeholder="Enter your email">
+    <input [(ngModel)]="user.password" class="w-full text-center p-[10px] text-[16px] my-[10px] rounded border-2 border-purple-300"
+      type="password" name="password" id="password" placeholder="Enter your password">
+    <input (click)="login()"
+      class="text-black bg-purple-300 w-full p-[10px] text-[16px] my-[10px] cursor-pointer rounded" type="button"
+      value="Login">
+    <p>Don't you have an account? Please <a class="text-purple-900 font-bold" href="/auth#/register"
+        onclick="singleSpaNavigate(event)">register</a>!</p>
+  </form>
+</section>

@@ -1,0 +1,11 @@
+<form class="w-[400px] h-[250px] flex flex-col items-center justify-center p-[20px] roudend border-2 border-purple-900 m-2">
+  <input [(ngModel)]="board.name"
+    class="w-full text-center p-[10px] text-[16px] my-[10px] rounded border-2 border-purple-300" type="text" name="name"
+    id="name" placeholder="Name">
+  <input [(ngModel)]="board.description"
+    class="w-full text-center p-[10px] text-[16px] my-[10px] rounded border-2 border-purple-300" type="text"
+    name="description" id="description" placeholder="Description">
+  <input (click)="create()"
+    class="text-black bg-purple-300 w-full p-[10px] text-[16px] my-[10px] cursor-pointer rounded" type="button"
+    value="Create!">
+</form>

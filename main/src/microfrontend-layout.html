@@ -1,0 +1,17 @@
+<single-spa-router>
+  <nav>
+    <application name="@app/navbar"></application>
+  </nav>
+  
+  <main>
+    <route default>
+      <application name="@app/home"></application>
+    </route>
+    <route path="/auth">
+      <application name="@app/auth"></application>
+    </route>
+    <route path="/boards">
+      <application name="@app/boards"></application>
+    </route>
+  </main>
+</single-spa-router>
