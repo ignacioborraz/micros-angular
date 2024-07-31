@@ -2,10 +2,10 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: ':lid',
+    path: ':bid',
     loadComponent: () =>
-      import('./views/tableboards/tableboards.component').then(
-        (res) => res.TableboardsComponent
+      import('./views/lists/lists.component').then(
+        (res) => res.ListsComponent
       ),
   },
 ];

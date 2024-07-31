@@ -23,6 +23,7 @@ export class LoginViewComponent {
       (response) => {
         localStorage.setItem('token', response.token);
         alert(response.message);
+        location.replace('/boards');
       },
       (error) => {
         alert(error.error.message);

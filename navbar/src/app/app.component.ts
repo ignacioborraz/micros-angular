@@ -8,4 +8,10 @@ import { RouterLink } from '@angular/router';
   //template: '<router-outlet />',
   templateUrl: './app.component.html',
 })
-export class AppComponent {}
+export class AppComponent {
+  token = localStorage.getItem('token') || null;
+  signout = (): void => {
+    localStorage.removeItem('token');
+    location.replace('/');
+  };
+}

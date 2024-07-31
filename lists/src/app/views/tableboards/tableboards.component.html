@@ -1,6 +1,0 @@
-<section class="w-full 2xl:px-[100px] pt-[80px] flex justify-evenly flex-wrap">
-  <new-board />
-  @for (each of boards; track each._id) {
-    <board [id]="each._id || ''" [name]="each.name" [description]="each.description || ''" />
-  }
-</section>

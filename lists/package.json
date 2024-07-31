@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:single-spa:app": "ng build app --configuration production",
-    "serve": "ng s --project app --disable-host-check --port 4202 --live-reload false"
+    "serve": "ng s --project app --disable-host-check --port 4204 --live-reload false"
   },
   "private": true,
   "dependencies": {

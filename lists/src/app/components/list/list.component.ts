@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'board',
+  selector: 'list',
   standalone: true,
   imports: [],
-  templateUrl: './board.component.html',
+  templateUrl: './list.component.html',
 })
-export class BoardComponent {
+export class ListComponent {
   @Input() id = ''
   @Input() name = ''
   @Input() description= ''
