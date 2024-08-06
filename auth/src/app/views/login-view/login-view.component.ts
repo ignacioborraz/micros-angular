@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { User } from '../../interfaces/user';
 import { UsersService } from '../../services/users.service';
+import { AuthStore } from '../../store/auth.store';
 
 @Component({
   selector: 'login',
@@ -11,12 +12,16 @@ import { UsersService } from '../../services/users.service';
   templateUrl: './login-view.component.html',
 })
 export class LoginViewComponent {
+  readonly store = inject(AuthStore);
+
   user: User = {
     email: '',
     password: '',
   };
 
-  constructor(private service: UsersService) {}
+  constructor(private service: UsersService) {
+    this.user = this.store.user();
+  }
 
   login = (): void => {
     this.service.login(this.user).subscribe(
